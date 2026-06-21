@@ -63,7 +63,7 @@ export const skills = [
       {
         id: 7,
         title: "Illustrator",
-        percentage: 80,
+        percentage: 70,
         icon: Palette,
       },
       {

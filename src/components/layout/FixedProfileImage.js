@@ -43,11 +43,25 @@ export default function FixedProfileImage({ setActiveSection }) {
             @ Contactez-moi
           </button>
           <div className="flex flex-row gap-3 justify-center mt-3">
-            <a href="facebook">
-              <SiFacebook size={30} className="text-[#55E6A5] hover:scale-110 hover:text-white transition-all duration-200" />
+            <a
+              href="https://www.facebook.com/nicolas.lestrez"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <SiFacebook
+                size={30}
+                className="text-[#55E6A5] hover:scale-110 hover:text-white transition-all duration-200"
+              />
             </a>
-            <a href="Linkedin">
-              <FaLinkedin size={30} className="text-[#55E6A5] hover:scale-110 hover:text-white transition-all duration-200" />
+            <a
+              href="https://www.linkedin.com/in/nicolas-lestrez/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin
+                size={30}
+                className="text-[#55E6A5] hover:scale-110 hover:text-white transition-all duration-200"
+              />
             </a>
           </div>
         </div>

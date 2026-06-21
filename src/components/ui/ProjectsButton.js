@@ -4,7 +4,7 @@ export default function ProjectsButton({ setActiveSection }) {
   return (
     <button
       onClick={() => setActiveSection("portfolio")}
-      className="absolute bottom-8 right-8 flex items-center justify-center"
+      className="absolute bottom-8 right-8 hidden items-center justify-center md:flex"
     >
       <div className="relative h-40 w-40">
         <svg
