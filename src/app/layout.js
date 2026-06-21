@@ -13,6 +13,10 @@ export const metadata = {
   description:
     "Portfolio de Nicolas Lestrez. Création de sites web modernes, UX/UI, Next.js et WordPress.",
 
+    verification: {
+  google: "a-yRKzuFYEDAOfJnst_VwWyRWCgKC5XSEaDYJAJWvgg",
+},
+
   authors: [{ name: "Nicolas Lestrez" }],
   creator: "Nicolas Lestrez",
 
