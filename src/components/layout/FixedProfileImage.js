@@ -21,11 +21,11 @@ export default function FixedProfileImage({ setActiveSection }) {
     <div className="relative z-20 h-[560px] w-[330px] lg:rounded-tl-[15rem] rounded-[2rem] border-2 border-white/80 p-4 md:h-[680px] md:w-[420px] lg:h-[860px] lg:w-[540px]">
       <div className="relative h-full w-full overflow-hidden lg:rounded-tl-[15rem] rounded-[2rem] shadow-2xl">
         <Image
-          src="/images/Nicolas-L.webp"
+          src="/images/Lestrez-nicolas.webp"
           alt="Portrait de Nicolas Lestrez"
           fill
           sizes="(min-width: 1024px) 540px, (min-width: 768px) 420px, 330px"
-          className="object-cover"
+          className="object-contain object-top"
           priority
         />
 
