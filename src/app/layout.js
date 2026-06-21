@@ -13,9 +13,9 @@ export const metadata = {
   description:
     "Portfolio de Nicolas Lestrez. Création de sites web modernes, UX/UI, Next.js et WordPress.",
 
-    verification: {
-  google: "a-yRKzuFYEDAOfJnst_VwWyRWCgKC5XSEaDYJAJWvgg",
-},
+  verification: {
+    google: "a-yRKzuFYEDAOfJnst_VwWyRWCgKC5XSEaDYJAJWvgg",
+  },
 
   authors: [{ name: "Nicolas Lestrez" }],
   creator: "Nicolas Lestrez",
@@ -47,10 +47,26 @@ export const metadata = {
   },
 };
 
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Nicolas Lestrez",
+  jobTitle: "Développeur Web Freelance",
+  url: "https://portfolio-nicolas-sigma.vercel.app",
+  email: "mailto:nicolas.lestrez@free.fr",
+  image: "https://portfolio-nicolas-sigma.vercel.app/opengraph-image.webp",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="fr" className="h-full antialiased">
       <body className={`${kodchasan.className} min-h-full flex flex-col`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personSchema),
+          }}
+        />
         {children}
       </body>
     </html>
