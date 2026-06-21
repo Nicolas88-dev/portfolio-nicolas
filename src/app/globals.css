@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index:0;
+}
+
+.background li {
+  position: absolute;
+  bottom: -150px;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background: #55E6A5;
+  border: 1px solid #55E6A5;
+  list-style: none;
+  animation: animate 15s linear infinite;
+}
+
+.background li:nth-child(1) {
+  left: 10%;
+  width: 40px;
+  height: 40px;
+  animation-delay: 0s;
+}
+
+.background li:nth-child(2) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 2s;
+  animation-duration: 18s;
+}
+
+.background li:nth-child(3) {
+  left: 45%;
+  width: 30px;
+  height: 30px;
+  animation-delay: 4s;
+}
+
+.background li:nth-child(4) {
+  left: 60%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 3s;
+  animation-duration: 20s;
+}
+
+.background li:nth-child(5) {
+  left: 75%;
+  width: 50px;
+  height: 50px;
+  animation-delay: 3s;
+}
+
+.background li:nth-child(6) {
+  left: 85%;
+  width: 90px;
+  height: 90px;
+  animation-delay: 5s;
+  animation-duration: 22s;
+}
+
+.background li:nth-child(7) {
+  left: 35%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 6s;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1300px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  body,
+  a,
+  button,
+  [data-cursor-scroll],
+  [data-cursor-scroll] * {
+    cursor: none;
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
