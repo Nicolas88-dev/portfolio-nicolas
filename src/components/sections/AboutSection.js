@@ -32,21 +32,21 @@ export default function AboutSection() {
       <div className="mt-10 flex flex-col gap-5 md:flex-row md:gap-20">
         <div className="flex flex-col">
           <h2 className="text-5xl font-black text-[#55E6A5]">10+</h2>
-          <h3 className="text-xl font-bold uppercase">
+          <h3 className="text-xl font-bold uppercase text-black">
             années d&apos;expérience
           </h3>
         </div>
 
         <div className="flex flex-col">
           <h2 className="text-5xl font-black text-[#55E6A5]">100+</h2>
-          <h3 className="text-xl font-bold uppercase">projets complétés</h3>
+          <h3 className="text-xl font-bold uppercase text-black">projets complétés</h3>
         </div>
       </div>
 
       <div className="mt-16 space-y-16">
         {skills.map((group) => (
           <div key={group.category}>
-            <h2 className="mb-10 text-3xl font-bold">{group.category}</h2>
+            <h2 className="mb-10 text-3xl font-bold text-black">{group.category}</h2>
 
             <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
               {group.items.map((skill) => (
