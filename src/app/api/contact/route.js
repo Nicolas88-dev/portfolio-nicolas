@@ -4,12 +4,42 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request) {
   try {
-    const { name, email, phone, subject, message } = await request.json();
+    const { name, email, phone, subject, message, website } =
+      await request.json();
+
+    const phoneRegex =
+      /^(?:(?:\+33|0033)[1-9](?:[\s.-]?\d{2}){4}|0[1-9](?:[\s.-]?\d{2}){4})$/;
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (website) {
+      return Response.json({ success: true }, { status: 200 });
+    }
+
+    if (!name || name.length < 2) {
+      return Response.json({ error: "Nom invalide." }, { status: 400 });
+    }
+
+    if (!emailRegex.test(email)) {
+      return Response.json({ error: "Email invalide." }, { status: 400 });
+    }
+
+    if (!phoneRegex.test(phone)) {
+      return Response.json({ error: "Téléphone invalide." }, { status: 400 });
+    }
+
+    if (!subject || subject.length < 2) {
+      return Response.json({ error: "Sujet invalide." }, { status: 400 });
+    }
+
+    if (!message || message.length < 10) {
+      return Response.json({ error: "Message trop court." }, { status: 400 });
+    }
 
     if (!name || !email || !message) {
       return Response.json(
         { error: "Nom, email et message sont obligatoires." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -35,7 +65,7 @@ ${message}
       console.error("Erreur Resend :", error);
       return Response.json(
         { error: "Erreur Resend lors de l'envoi." },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -47,7 +77,7 @@ ${message}
 
     return Response.json(
       { error: "Erreur lors de l'envoi du message." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

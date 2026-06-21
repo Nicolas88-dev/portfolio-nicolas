@@ -20,6 +20,7 @@ export default function ContactSection() {
       phone: formData.get("phone")?.trim(),
       subject: formData.get("subject")?.trim(),
       message: formData.get("message")?.trim(),
+      website: formData.get("website"),
     };
 
     const phoneRegex =
@@ -118,6 +119,10 @@ export default function ContactSection() {
           className="mt-12 w-full resize-none border-b border-gray-200 bg-transparent pb-8 text-base font-medium text-black outline-none placeholder:text-black/70 focus:border-black"
         />
 
+        <div className="hidden">
+          <input type="text" name="website" autoComplete="off" tabIndex="-1" />
+        </div>
+
         <button
           type="submit"
           disabled={isSending}
@@ -189,7 +194,9 @@ export default function ContactSection() {
         </div>
       </div>
       <div className="mt-5">
-        <p>© Portfolio Nicolas 2026. Tous les droits réservés à Nicolas Lestrez.</p>
+        <p>
+          © Portfolio Nicolas 2026. Tous les droits réservés à Nicolas Lestrez.
+        </p>
       </div>
     </motion.section>
   );
