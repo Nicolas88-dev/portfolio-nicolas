@@ -19,7 +19,7 @@ export default function ServicesSection() {
         Donner vie à votre vision avec précision et passion
       </h1>
 
-      <p className="text-xl">
+      <p className="text-xl text-black/70">
         De la conception au référencement, je mets mon savoir-faire au service
         de votre activité pour créer des expériences digitales modernes et
         efficaces.
